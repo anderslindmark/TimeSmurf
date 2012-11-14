@@ -1,0 +1,5 @@
+[
+	{
+		"keys": ["alt+ctrl+t"], "command": "time_smurf"
+	}
+]
