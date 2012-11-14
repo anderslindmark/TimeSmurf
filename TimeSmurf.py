@@ -1,9 +1,10 @@
 import sublime, sublime_plugin
-from datetime import datetime
+import time
 
 class TimeSmurfCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
-		tString = datetime.now().strftime('%Y-%m-%d %H:%M')
+		tFormat = self.view.settings().get('timesmurf_formatstring')
+		tString = time.strftime(tFormat)
 		pos = self.view.sel()
 		for caret in pos:
 			index = caret.begin()
